@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Student Registration</title>
+	</head>
+	<body>
+		<h1>Enter student details here :</h1>
+		<!-- <form> -->
+
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="studentName">Name:</label></td>
+						<td><input type="text" id="studentName" placeholder="write your name"></td>
+					</tr>
+
+					<tr>
+						<td><label for="studentPhoneNumber">Mobile Number:</label></td>
+						<td><input type="number" id="studentPhoneNumber"></td>
+					</tr>
+
+					<tr>
+						<td><label for="studentEmail">Email:</label></td>
+						<td><input type="text" id="studentEmail"></td>
+					</tr>
+
+					<tr>
+						<td><label for="studentCollege">College:</label></td>
+						<td><select id="studentCollege">
+								<option>RAIT</option>
+								<option>SIES</option>
+								<option>ABC</option>
+								<option>SIES</option>	
+							</select>
+						</td>
+					</tr>
+
+					<tr>
+						<td><label for="studentAddress">Address:</label></td>
+						<td><textarea id="studentAddress"></textarea></td>
+					</tr>
+
+					<tr>
+						<td><label for="studentAddress">Course:</label></td>
+						<td>
+							FullStack: <input type="radio" value="FullStack" name="course">
+							<br>
+							CrossPlatform: <input type="radio" value="CrossPlatform" name="course">
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="2"><button type="submit" name="submitButton" id="submitButton" onclick="myfunction()">
+							Confirm Registration
+						</button></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		<!-- </form> -->
+		<div style="display: none;" id="showStudentDiv">
+			<h2>Entered details are as follows :</h2>
+
+			<span>Entered Student Name = </span>
+			<span id="enteredName"></span>
+			<br>
+			<span>Entered Student Number = </span>
+			<span id="enteredNumber"></span>
+			<br>
+			<span>Entered Student Email = </span>
+			<span id="enteredEmail"></span>
+			<br>
+			<span>Entered Student College = </span>
+			<span id="enteredCollege"></span>
+			<br>
+			<span>Entered Student Address = </span>
+			<span id="enteredAddress"></span>
+			<br>
+			<span>Entered Student Course = </span>
+			<span id="enteredCourse"></span>
+
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		
+		function myfunction()
+		{
+			//alert("hello World");
+			//fetch the value attribute of input field of name
+			var studentName = document.getElementById('studentName').value;
+			var studnetPhoneNumber =  document.getElementById('studentPhoneNumber').value;
+			var studnetEmail =  document.getElementById('studentEmail').value;
+			var studentCollege = document.getElementById('studentCollege').value;
+			var studentAddress = document.getElementById('studentAddress').value;
+			var studentCourse =document.getElementsByName('course')[0].value;
+
+			// var coursesArray = document.getElementsByName('course');
+			// var studentCourse = coursesArray[0].value;
+
+			//console.log();
+
+			//alert("name = "+studentName+" ,number= "+studnetPhoneNumber);
+			// console.log("entered student name = "+studentName);
+			// console.log("entered student mobile = "+studnetPhoneNumber);
+
+			document.getElementById('enteredName').innerText = studentName;
+			document.getElementById('enteredNumber').innerText = studnetPhoneNumber;
+			document.getElementById('enteredEmail').innerText = studnetEmail;
+			document.getElementById('enteredCollege').innerText = studentCollege;
+			document.getElementById('enteredAddress').innerText = studentAddress;
+			document.getElementById('enteredCourse').innerText = studentCourse;
+			
+			document.getElementById('showStudentDiv').style.display = 'inline';
+		}
+
+	</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
